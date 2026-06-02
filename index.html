@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MAISON — considered, sustainably-made furniture for modern living.">
+<title>MAISON — Considered furniture for modern living</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="hdr">
+  <div class="wrap bar">
+    <button class="icon-btn hamb" aria-label="Menu" onclick="alert('Mobile menu — Shop, Living, Bedroom, Dining, Workspace')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <a class="logo" href="#" onclick="go('home');return false">MAISON</a>
+    <nav class="nav">
+      <a href="#" class="active" data-nav="home" onclick="go('home');return false">Home</a>
+      <a href="#" data-nav="shop" onclick="go('shop');return false">Shop All</a>
+      <a href="#" data-nav="shop" onclick="filterCat('Sofas');return false">Living</a>
+      <a href="#" data-nav="shop" onclick="filterCat('Beds');return false">Bedroom</a>
+      <a href="#" data-nav="shop" onclick="filterCat('Dining');return false">Dining</a>
+      <a href="#" data-nav="shop" onclick="filterCat('Office');return false">Workspace</a>
+    </nav>
+    <div class="tools">
+      <div class="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="srch" placeholder="Search furniture…" autocomplete="off" aria-label="Search">
+        <div class="ac" id="ac"></div>
+      </div>
+      <button class="icon-btn" aria-label="Account" onclick="toast('Account dashboard — orders, wishlist, delivery tracking')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="Wishlist" onclick="toast('Your wishlist')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.5 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21z"/></svg>
+        <span class="badge" id="wbadge" style="display:none">0</span>
+      </button>
+      <button class="icon-btn" aria-label="Cart" onclick="go('cart')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 7h14l-1.2 11a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+        <span class="badge" id="cbadge" style="display:none">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ HOME VIEW ============ -->
+<section class="view active" id="view-home">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-art" aria-hidden="true">
+      <img class="scene" src="images/hero.svg" alt="">
+    </div>
+    <div class="hero-grad"></div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <span class="eyebrow reveal" style="animation-delay:.05s">New — The Linen Collection</span>
+        <h1 class="reveal" style="animation-delay:.15s">Elevate your <em>living</em> space.</h1>
+        <p class="reveal" style="animation-delay:.28s">Considered, sustainably-made furniture for the modern home. Designed to be lived in, built to be kept.</p>
+        <div class="hero-cta reveal" style="animation-delay:.4s">
+          <button class="btn btn-primary" onclick="go('shop')">Shop the collection <span class="arrow">→</span></button>
+          <button class="btn btn-ghost" onclick="go('shop')">Explore living room</button>
+        </div>
+        <div class="hero-meta reveal" style="animation-delay:.55s">
+          <div><div class="n">10yr</div><div class="l">Warranty</div></div>
+          <div><div class="n">Free</div><div class="l">Delivery over R3k</div></div>
+          <div><div class="n">30-day</div><div class="l">Easy returns</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <div class="section wrap" data-io>
+    <div class="shead">
+      <div><span class="eyebrow">Browse by room</span><h2>Furniture for every corner</h2></div>
+      <a class="link-more" href="#" onclick="go('shop');return false">View all categories →</a>
+    </div>
+    <div class="cat-grid" id="catGrid"></div>
+  </div>
+
+  <!-- BEST SELLERS -->
+  <div class="section wrap" data-io>
+    <div class="shead">
+      <div><span class="eyebrow">Loved by our customers</span><h2>Best sellers</h2></div>
+      <a class="link-more" href="#" onclick="go('shop');return false">Shop all →</a>
+    </div>
+    <div class="prod-grid" id="bestGrid"></div>
+  </div>
+
+  <!-- PROMO -->
+  <div class="section wrap" data-io>
+    <div class="promo">
+      <div class="txt">
+        <span class="eyebrow">Limited time</span>
+        <h2>The Autumn Event — up to 25% off</h2>
+        <p>Refresh your home before the season turns. Selected sofas, beds and dining now reduced.</p>
+        <div class="countdown" id="cd">
+          <div class="cd"><div class="v" id="cd-d">02</div><div class="u">Days</div></div>
+          <div class="cd"><div class="v" id="cd-h">14</div><div class="u">Hrs</div></div>
+          <div class="cd"><div class="v" id="cd-m">38</div><div class="u">Min</div></div>
+          <div class="cd"><div class="v" id="cd-s">09</div><div class="u">Sec</div></div>
+        </div>
+        <button class="btn btn-primary" onclick="go('shop')">Shop the sale <span class="arrow">→</span></button>
+      </div>
+      <div class="vis">
+        <div class="ill"><img src="images/promo.svg" alt="25 percent off selected furniture" style="max-width:60%"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="section wrap" data-io>
+    <div class="shead"><div><span class="eyebrow">Real homes</span><h2>What our customers say</h2></div></div>
+    <div class="testi-grid" id="testiGrid"></div>
+  </div>
+
+  <!-- TRUST -->
+  <div class="wrap"><div class="trust" data-io id="trust"></div></div>
+
+  <!-- NEWSLETTER -->
+  <div class="news wrap" data-io>
+    <span class="eyebrow">Stay in the loop</span>
+    <h2>Design inspiration, in your inbox</h2>
+    <p>Join 40,000 modern homeowners. Early access to new collections and members-only offers.</p>
+    <div class="news-form">
+      <input type="email" placeholder="Enter your email" aria-label="Email">
+      <button class="btn btn-primary" onclick="toast('Welcome to MAISON — check your inbox ✦')">Subscribe</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOP / PLP VIEW ============ -->
+<section class="view" id="view-shop">
+  <div class="shop-head wrap">
+    <div class="crumb"><a href="#" onclick="go('home');return false">Home</a> / <span id="crumbCat">Shop All</span></div>
+    <h1 id="shopTitle">Shop All</h1>
+  </div>
+  <div class="wrap shop-layout">
+    <aside class="filters">
+      <div class="fgroup"><h4>Category</h4><div id="fCat"></div></div>
+      <div class="fgroup"><h4>Material</h4><div id="fMat"></div></div>
+      <div class="fgroup"><h4>Colour</h4><div id="fCol"></div></div>
+      <div class="fgroup">
+        <h4>Max price</h4>
+        <input type="range" class="range" id="fPrice" min="3000" max="25000" step="500" value="25000" oninput="onPrice(this.value)" aria-label="Maximum price">
+        <div class="range-val"><span>R3 000</span><span id="priceVal">R25 000</span></div>
+      </div>
+    </aside>
+    <div class="shop-main">
+      <div class="toolbar">
+        <span class="count" id="shopCount"></span>
+        <select class="sortsel" id="sortSel" onchange="renderShop()" aria-label="Sort products">
+          <option value="pop">Sort: Popularity</option>
+          <option value="new">Sort: Newest</option>
+          <option value="low">Sort: Price ↑</option>
+          <option value="high">Sort: Price ↓</option>
+        </select>
+      </div>
+      <div class="prod-grid" id="shopGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PDP VIEW ============ -->
+<section class="view" id="view-product">
+  <div class="wrap pdp">
+    <div class="crumb"><a href="#" onclick="go('home');return false">Home</a> / <a href="#" onclick="go('shop');return false">Shop</a> / <span id="pdpCrumb"></span></div>
+    <div class="pdp-grid" style="margin-top:var(--s5)">
+      <div class="gallery">
+        <div class="gmain"><div class="ill" id="pdpMain"></div></div>
+        <div class="gthumbs" id="pdpThumbs"></div>
+      </div>
+      <div class="pdp-info">
+        <div class="cat-tag" id="pdpCat"></div>
+        <h1 id="pdpName"></h1>
+        <div class="pdp-rate"><span class="stars" id="pdpStars"></span><span id="pdpRev"></span></div>
+        <div class="pdp-price" id="pdpPrice"></div>
+        <div class="pdp-stock"><span class="dot"></span><span id="pdpStock">In stock — ships in 5–7 days</span></div>
+        <p class="pdp-desc" id="pdpDesc"></p>
+        <div class="opt-row">
+          <div class="ol">Material</div>
+          <div class="opt-chips"><span class="chip on">Solid oak</span><span class="chip">Walnut</span><span class="chip">Ash</span></div>
+        </div>
+        <div class="opt-row">
+          <div class="ol">Upholstery</div>
+          <div class="opt-chips" id="pdpCols"></div>
+        </div>
+        <div class="pdp-actions">
+          <div class="qty"><button onclick="pdpQty(-1)" aria-label="Decrease quantity">−</button><span id="pdpQ">1</span><button onclick="pdpQty(1)" aria-label="Increase quantity">+</button></div>
+          <button class="btn btn-primary btn-block" id="pdpAdd">Add to cart</button>
+          <button class="icon-btn" style="border:1px solid var(--line)" id="pdpWish" aria-label="Add to wishlist">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.5 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21z"/></svg>
+          </button>
+        </div>
+        <div class="specs">
+          <div class="spec"><span class="k">Dimensions</span><span class="v" id="pdpDim"></span></div>
+          <div class="spec"><span class="k">Materials</span><span class="v" id="pdpMat"></span></div>
+          <div class="spec"><span class="k">Weight capacity</span><span class="v">180 kg</span></div>
+          <div class="spec"><span class="k">Assembly</span><span class="v">Tool-free, ~15 min</span></div>
+          <div class="spec"><span class="k">Delivery</span><span class="v">Free over R3 000 · Tracked</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="section" data-io>
+      <div class="shead"><div><span class="eyebrow">You may also like</span><h2>Related pieces</h2></div></div>
+      <div class="prod-grid" id="relGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CART VIEW ============ -->
+<section class="view" id="view-cart">
+  <div class="wrap cart-wrap">
+    <h1>Your cart</h1>
+    <div id="cartBody"></div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <div class="logo">MAISON</div>
+        <p>Considered furniture for modern living. Designed in Cape Town, made to last a lifetime.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 19c-.5-2 0-4 1-7M12 3a7 7 0 0 0-3 13"/><circle cx="12" cy="10" r="7"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2l1-3h-3V8a1 1 0 0 1 1-1z"/></svg></a>
+        </div>
+      </div>
+      <div><h5>Shop</h5><ul><li><a href="#" onclick="filterCat('Sofas');return false">Sofas &amp; Seating</a></li><li><a href="#" onclick="filterCat('Beds');return false">Beds</a></li><li><a href="#" onclick="filterCat('Dining');return false">Dining</a></li><li><a href="#" onclick="filterCat('Office');return false">Workspace</a></li></ul></div>
+      <div><h5>Support</h5><ul><li><a href="#">Delivery tracking</a></li><li><a href="#">Returns &amp; warranty</a></li><li><a href="#">Assembly guides</a></li><li><a href="#">Contact us</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="#">hello@maison.co.za</a></li><li><a href="#">+27 11 234 5678</a></li><li><a href="#">Midrand, Gauteng</a></li><li><a href="#">Mon–Fri · 9–17h</a></li></ul></div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 MAISON Furniture. All rights reserved.</span>
+      <span>Privacy · Terms · Cookies</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ QUICK VIEW MODAL ============ -->
+<div class="modal-bg" id="qvBg" onclick="if(event.target===this)closeQV()">
+  <div class="modal">
+    <div class="mvis"><div class="ill" id="qvIll" style="width:100%"></div></div>
+    <div class="mbody">
+      <button class="mclose" onclick="closeQV()" aria-label="Close">✕</button>
+      <div class="cat-tag" id="qvCat" style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--clay);font-weight:600"></div>
+      <h3 id="qvName"></h3>
+      <div class="stars" id="qvStars"></div>
+      <div class="mprice" id="qvPrice"></div>
+      <p id="qvDesc"></p>
+      <button class="btn btn-primary btn-block" id="qvAdd">Add to cart</button>
+      <button class="btn btn-ghost btn-block" style="margin-top:.6rem" id="qvView">View full details</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
