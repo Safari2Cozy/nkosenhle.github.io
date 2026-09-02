@@ -1,7 +1,7 @@
 # Maison & Stone — Luxury Renovations . Interiors (landing page)
 
 A single-page lookbook / landing site for a luxury kitchen renovation &
-interiors business (South Africa, Eswatini & Zimbabwe). Vanilla HTML/CSS/JS
+interiors business (Gauteng, South Africa). Vanilla HTML/CSS/JS
 — no build step. WhatsApp is the primary contact channel throughout.
 
 ## Run
