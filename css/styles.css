@@ -387,6 +387,7 @@ footer li a:hover{color:var(--bone)}
   .hero p{font-size:1rem;max-width:none}
   .eyebrow{font-size:.66rem}
   .btn{padding:.85rem 1.4rem;font-size:.85rem;width:100%;justify-content:center}
+  .hdr-wa{width:40px;height:40px;padding:0}
   .contact-grid{grid-template-columns:1fr;gap:var(--s3)}
   .look-grid{grid-template-columns:1fr}
   .tab-row{gap:.4rem}
@@ -440,16 +441,17 @@ footer li a:hover{color:var(--bone)}
 .tab-row{display:flex;gap:.6rem;flex-wrap:wrap;margin:var(--s5) 0 var(--s6)}
 .tab{padding:.6rem 1.2rem;border:1px solid var(--line);border-radius:var(--r-pill);font-size:.85rem;
   background:var(--paper);color:var(--umber);transition:all .3s}
-.tab.on,.tab:hover{border-color:var(--espresso);background:var(--espresso);color:var(--bone)}
+.tab.on{border-color:var(--espresso);background:var(--espresso);color:var(--bone)}
+@media(hover:hover){.tab:hover{border-color:var(--espresso);background:var(--espresso);color:var(--bone)}}
 
 /* Lookbook photo grid */
 .look-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
 .look{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;cursor:pointer;
   background:var(--oat);box-shadow:var(--sh-sm);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
-.look:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
+@media(hover:hover){.look:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}}
 .look .ph{position:absolute;inset:0}
 .look .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
-.look:hover .ph img{transform:scale(1.07)}
+@media(hover:hover){.look:hover .ph img{transform:scale(1.07)}}
 .look .cap{position:absolute;left:0;right:0;bottom:0;padding:1rem 1.1rem;
   background:linear-gradient(0deg,rgba(42,37,32,.78),rgba(42,37,32,0) 70%);
   color:var(--bone);font-family:var(--display);font-size:1.05rem;letter-spacing:.01em}
@@ -459,7 +461,7 @@ footer li a:hover{color:var(--bone)}
 .contact-card{background:var(--paper);border:1px solid var(--line-soft);border-radius:var(--r-lg);
   padding:var(--s6) var(--s4);text-align:center;display:flex;flex-direction:column;align-items:center;gap:.5rem;
   transition:all .35s var(--ease)}
-.contact-card:hover{transform:translateY(-4px);box-shadow:var(--sh-md);border-color:var(--clay)}
+@media(hover:hover){.contact-card:hover{transform:translateY(-4px);box-shadow:var(--sh-md);border-color:var(--clay)}}
 .contact-card .ic{width:52px;height:52px;border-radius:50%;background:var(--oat);color:var(--clay);
   display:flex;align-items:center;justify-content:center;margin-bottom:.3rem}
 .contact-card h4{font-family:var(--sans);font-weight:600;font-size:.95rem;color:var(--espresso)}
