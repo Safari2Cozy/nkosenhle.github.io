@@ -388,7 +388,7 @@ footer li a:hover{color:var(--bone)}
   .eyebrow{font-size:.66rem}
   .btn{padding:.85rem 1.4rem;font-size:.85rem;width:100%;justify-content:center}
   .hdr-wa{width:34px;height:34px;padding:0}
-  .contact-grid{grid-template-columns:1fr;gap:var(--s3)}
+  .contact-grid{grid-template-columns:1fr;gap:var(--s3);justify-items:center}
   .look-grid{grid-template-columns:1fr}
   .tab-row{gap:.4rem}
   .tab{padding:.5rem 1rem;font-size:.78rem}
@@ -477,5 +477,6 @@ footer li a:hover{color:var(--bone)}
 }
 @media(max-width:760px){
   .look-grid{grid-template-columns:repeat(2,1fr);gap:var(--s3)}
-  .contact-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s3)}
+  .contact-grid{grid-template-columns:1fr;gap:var(--s4);justify-items:center}
+  .contact-card{width:100%;max-width:360px}
 }
