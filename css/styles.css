@@ -358,7 +358,7 @@ footer li a:hover{color:var(--bone)}
   .bar{height:64px;gap:var(--s3)}
   .logo span{font-size:1rem}
   .hdr-wa-lbl{display:none}
-  .hdr-wa{padding:0;width:40px;height:40px;justify-content:center;gap:0}
+  .hdr-wa{padding:0;width:34px;height:34px;justify-content:center;gap:0}
   .hero{min-height:auto;padding:var(--s6) 0 var(--s7)}
   .hero-grad{background:linear-gradient(180deg,rgba(247,243,236,.62),rgba(247,243,236,.4))}
   .hero-inner{padding:var(--s5) 0}
@@ -387,7 +387,7 @@ footer li a:hover{color:var(--bone)}
   .hero p{font-size:1rem;max-width:none}
   .eyebrow{font-size:.66rem}
   .btn{padding:.85rem 1.4rem;font-size:.85rem;width:100%;justify-content:center}
-  .hdr-wa{width:40px;height:40px;padding:0}
+  .hdr-wa{width:34px;height:34px;padding:0}
   .contact-grid{grid-template-columns:1fr;gap:var(--s3)}
   .look-grid{grid-template-columns:1fr}
   .tab-row{gap:.4rem}
@@ -457,15 +457,15 @@ footer li a:hover{color:var(--bone)}
   color:var(--bone);font-family:var(--display);font-size:1.05rem;letter-spacing:.01em}
 
 /* Contact method cards */
-.contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s4)}
+.contact-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s4)}
 .contact-card{background:var(--paper);border:1px solid var(--line-soft);border-radius:var(--r-lg);
   padding:var(--s6) var(--s4);text-align:center;display:flex;flex-direction:column;align-items:center;gap:.5rem;
-  transition:all .35s var(--ease)}
+  min-width:0;transition:all .35s var(--ease)}
 @media(hover:hover){.contact-card:hover{transform:translateY(-4px);box-shadow:var(--sh-md);border-color:var(--clay)}}
 .contact-card .ic{width:52px;height:52px;border-radius:50%;background:var(--oat);color:var(--clay);
-  display:flex;align-items:center;justify-content:center;margin-bottom:.3rem}
+  display:flex;align-items:center;justify-content:center;margin-bottom:.3rem;flex-shrink:0}
 .contact-card h4{font-family:var(--sans);font-weight:600;font-size:.95rem;color:var(--espresso)}
-.contact-card p{font-size:.82rem;color:var(--mist)}
+.contact-card p{font-size:.82rem;color:var(--mist);overflow-wrap:anywhere}
 
 /* Lightbox image (reuses .modal-bg / .modal / .mvis / .mbody) */
 #lbImg{min-height:320px}
@@ -473,9 +473,9 @@ footer li a:hover{color:var(--bone)}
 
 @media(max-width:1024px){
   .look-grid{grid-template-columns:repeat(2,1fr)}
-  .contact-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:760px){
   .look-grid{grid-template-columns:repeat(2,1fr);gap:var(--s3)}
-  .contact-grid{grid-template-columns:1fr 1fr;gap:var(--s3)}
+  .contact-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s3)}
 }
