@@ -87,7 +87,15 @@ function openLightbox(id){
   document.getElementById('lbBg').classList.add('show');
 }
 function closeLightbox(){ document.getElementById('lbBg').classList.remove('show'); }
-document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape'){ closeLightbox(); closeMenu(); } });
+
+/* ============ MOBILE MENU ============ */
+function toggleMenu(){ document.getElementById('mobileNav').classList.toggle('show'); }
+function closeMenu(){ document.getElementById('mobileNav').classList.remove('show'); }
+document.addEventListener('click', e => {
+  const nav = document.getElementById('mobileNav');
+  if(nav.classList.contains('show') && !nav.contains(e.target) && !e.target.closest('.hamb')) closeMenu();
+});
 
 /* ============ RENDER: TESTIMONIALS + TRUST ============ */
 document.getElementById('testiGrid').innerHTML = testimonials.map(t => `

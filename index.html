@@ -15,7 +15,7 @@
 <!-- ============ HEADER ============ -->
 <header id="hdr">
   <div class="wrap bar">
-    <button class="icon-btn hamb" aria-label="Menu" onclick="alert('Lookbook · Reviews · Contact')">
+    <button class="icon-btn hamb" aria-label="Menu" onclick="toggleMenu()">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
     <a class="logo" href="#top">
@@ -36,6 +36,11 @@
         <span class="hdr-wa-lbl">WhatsApp us</span>
       </a>
     </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#lookbook" onclick="closeMenu()">Lookbook</a>
+    <a href="#reviews" onclick="closeMenu()">Reviews</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
   </div>
 </header>
 
