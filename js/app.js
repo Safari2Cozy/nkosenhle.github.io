@@ -39,12 +39,12 @@ const looks = [
 
 const testimonials = [
   {q:'Our kitchen went from dated to something out of a magazine — and it still works for how we actually live. Every detail was considered.', n:'Lerato M.', r:'Johannesburg', i:'L'},
-  {q:'We renovated our kitchen and dining area from across the border. Site visits, updates, every step handled with total professionalism.', n:'Nkosi & Aisha', r:'Mbabane, Eswatini', i:'N'},
-  {q:'I\u2019ve referred three friends already. Considered, calm, quietly high-end — exactly what they promised at the first consultation.', n:'Thandeka N.', r:'Harare, Zimbabwe', i:'T'}
+  {q:'From the first site visit to the final walkthrough, communication never dropped. They delivered exactly what was quoted, on time.', n:'Nkosi & Aisha', r:'Johannesburg', i:'N'},
+  {q:'I\u2019ve referred three friends already. Considered, calm, quietly high-end — exactly what they promised at the first consultation.', n:'Thandeka N.', r:'Johannesburg', i:'T'}
 ];
 
 const trust = [
-  {t:'Free site consultation', d:'We visit, measure and quote before you commit to anything.', i:'<path d="M3 7h11v8H3z"/><path d="M14 9h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>'},
+  {t:'On-site consultation', d:'A call-out fee applies for site visits and quotes.', i:'<path d="M3 7h11v8H3z"/><path d="M14 9h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>'},
   {t:'Personally managed', d:'One dedicated team, every renovation completed here in Gauteng.', i:'<path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="m9 12 2 2 4-4"/>'},
   {t:'Dedicated project manager', d:'One point of contact from first sketch to final install.', i:'<path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/>'},
   {t:'On-time, on-budget', d:'Fixed-price quotes with no surprise costs along the way.', i:'<path d="m14 7 3 3-9 9-3-3z"/><path d="M14 7l3-3 3 3-3 3z"/>'}
