@@ -103,16 +103,6 @@ document.querySelectorAll('[data-wa]').forEach(el => {
   el.href = waLink(el.dataset.wa || 'Hi! I\u2019d love to chat about a kitchen renovation.');
 });
 
-/* ============ TOAST ============ */
-let tT;
-function toast(m){
-  const t = document.getElementById('toast');
-  t.innerHTML = '<span style="color:var(--clay)">\u2726</span> ' + m;
-  t.classList.add('show');
-  clearTimeout(tT);
-  tT = setTimeout(() => t.classList.remove('show'), 2600);
-}
-
 /* ============ SCROLL REVEAL ============ */
 function observe(){
   const els = document.querySelectorAll('[data-io]:not(.seen)');
