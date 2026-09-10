@@ -56,7 +56,7 @@ let activeMood = 'all';
 /* ============ LOOKBOOK ============ */
 function look(l){
   return `<div class="look" onclick="openLightbox(${l.id})">
-    <div class="ph">${photoImg(l.img, l.name)}</div>
+    <div class="ph">${photoImg(l.img, l.name + ' kitchen renovation by Maison & Stone, Gauteng')}</div>
     <div class="cap"><span>${l.name}</span></div>
   </div>`;
 }
